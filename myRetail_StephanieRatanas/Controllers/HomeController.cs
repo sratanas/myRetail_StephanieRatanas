@@ -20,9 +20,8 @@ namespace myRetail_StephanieRatanas.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var model = new MyRetailModel();
-
-            model.JsonFromApi = await _redSkyService.ReturnAllApiData();
+            var model = new RootRedSkyResults();
+            model = await _redSkyService.ReturnAllApiData();
 
             return View(model);
         }
