@@ -8,14 +8,14 @@ using MongoDB.Bson;
 namespace myRetail_StephanieRatanas.Models
 {
     
-    public class RootMongoDBResutls
+    public class RootMongoDBResults
     {
         [BsonElement("product")]
         public MongoProduct Product { get; set; }
 
 
         [BsonId]
-        public string _id { get; set; }
+        public ObjectId _id { get; set; }
 
 
     }

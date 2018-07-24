@@ -16,15 +16,6 @@ namespace myRetail_StephanieRatanas.Models
         [JsonProperty("product")]
         public product Product { get; set; }
 
-        public JObject reserializedJson { get; set; }
-        public JObject MongoSerialized { get; set; }
-
-
-        public RootMongoDBResutls MongoResultById { get; set; }
-
-        public RootRedSkyResults ApiResults { get; set; }
-
-        public RootRedSkyResults FinalObject { get; set; }
 
         public object MergedJson { get; set; }
 

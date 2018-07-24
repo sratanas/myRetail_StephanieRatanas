@@ -21,42 +21,51 @@ namespace myRetail_StephanieRatanas.Controllers
             _redSkyService = redSkyService;
             _redSkyRepository = redSkyRepository;
         }
+
+
+        [HttpGet]
         [Route("/products/{id}")]
         public async Task<IActionResult> Index(string id)
         {
             var model = new RootRedSkyResults();
-            model.ApiResults = await _redSkyService.ReturnAllApiData();
-            model.MongoResultById = await _redSkyRepository.GetProductById(id);
+
+            var ApiResults = await _redSkyService.ReturnAllApiData();
+            var MongoResultById = await _redSkyRepository.GetProductById(id);
 
 
+            JObject Mongo = JObject.Parse(JsonConvert.SerializeObject(MongoResultById.Product));
+            JObject Api = JObject.Parse(JsonConvert.SerializeObject(ApiResults.Product));
 
-            //model.Product.item.product_description.Price = 
-            //model.MongoSerialized = JObject.Parse(JsonConvert.SerializeObject(model.MongoResultById));
-            //model.reserializedJson = JObject.Parse(JsonConvert.SerializeObject(model.ApiResults));
-
-            //var mongomongo = JsonConvert.SerializeObject(model.MongoResultById);
-            //var apiapi = JsonConvert.SerializeObject(model.ApiResults);
-
-            JObject Mongo = JObject.Parse(JsonConvert.SerializeObject(model.MongoResultById.Product));
-            JObject Api = JObject.Parse(JsonConvert.SerializeObject(model.ApiResults.Product));
-
-            Mongo.Merge(Api, new JsonMergeSettings
+            if(id == ApiResults.Product.item.product_Id)
             {
-                // union array values together to avoid duplicates
-                MergeArrayHandling = MergeArrayHandling.Union
-            });
+                Mongo.Merge(Api, new JsonMergeSettings
+                {
+                    // union array values together to avoid duplicates
+                    MergeArrayHandling = MergeArrayHandling.Union
+                });
 
-            model.MergedJson = Mongo;
+                model.MergedJson = Mongo;
 
-            return View(model);
+                return View(model);
+            }
+            else
+            {
+                model.MergedJson = Mongo;
+                return View(model);
+            }
+
+
         }
 
-
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        [HttpPut]
+        public IActionResult ChangeItemPrice()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+
+            return View("Index");
         }
+
+
+
+
     }
 }

@@ -17,7 +17,7 @@ namespace myRetail_StephanieRatanas.Services
         }
 
 
-        public async Task<RootMongoDBResutls> GetProductById(string id)
+        public async Task<RootMongoDBResults> GetProductById(string id)
         {
             try
             {

@@ -6,7 +6,7 @@ using myRetail_StephanieRatanas.Models;
 
 namespace myRetail_StephanieRatanas.Services
 {
-    public class RedSkyContext : IMongoDBService
+    public class RedSkyContext
     {
 
         private readonly IMongoDatabase _database = null;
@@ -21,10 +21,10 @@ namespace myRetail_StephanieRatanas.Services
             }
         }
 
-        public IMongoCollection<RootMongoDBResutls> RootRedSkyResults{
+        public IMongoCollection<RootMongoDBResults> RootRedSkyResults{
             get
             {
-                return _database.GetCollection<RootMongoDBResutls>("RedSky");
+                return _database.GetCollection<RootMongoDBResults>("RedSky");
             }
         }
 

@@ -16,5 +16,11 @@
     <Content Remove="Views\Home\About.cshtml" />
     <Content Remove="Views\Home\Contact.cshtml" />
     <Content Remove="Views\Shared\_CookieConsentPartial.cshtml" />
+    <Content Remove="wwwroot\images\banner1.svg" />
+    <Content Remove="wwwroot\images\banner2.svg" />
+    <Content Remove="wwwroot\images\banner3.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Services\IMongoDBService.cs" />
   </ItemGroup>
 </Project>
