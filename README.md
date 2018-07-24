@@ -26,7 +26,6 @@ db.RedSky.insertOne({product:{item:{tcin:"13860428",product_description:{title:"
 db.RedSky.insertOne({product:{item:{tcin:"836541838",product_description:{title:"The Little Mermaid", price: 18.50}}}})
 ```
 
- - Configure connection string in appsettings.json
  - Navigate to folder with csproj file and run:
 
 ```
