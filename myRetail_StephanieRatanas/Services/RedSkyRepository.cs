@@ -16,6 +16,19 @@ namespace myRetail_StephanieRatanas.Services
             _context = new RedSkyContext(settings);
         }
 
+        public async Task<List<RootMongoDBResults>> GetAllProductsFromDatabase()
+        {
+            try
+            {
+                var result = await _context.RootRedSkyResults.Find(_ => true).ToListAsync<RootMongoDBResults>();
+                                          
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         public async Task<RootMongoDBResults> GetProductById(string id)
         {

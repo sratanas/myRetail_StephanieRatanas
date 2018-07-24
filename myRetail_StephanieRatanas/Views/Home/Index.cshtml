@@ -1,9 +1,30 @@
 ﻿@model  myRetail_StephanieRatanas.Models.RootRedSkyResults
-<div>
+<div class="row">
+    <div class="col-md-6">
+        <br />
+        <br />
+        <h3>Json Response:</h3>
+        <pre>
+                @Model.Json
+            </pre>
 
-    <pre>
-        @Model.MergedJson
-    </pre>
 
+    </div>
+    <div class=col-md-6>
+        <div>
+            <br />
+            <br />
+            <h3>Products:</h3>
+            <table class="table-condensed">
+                @foreach (var product in Model.DBList)
+                {
+                <tr>
+                    <td><a href="/products/@product.Product.item.product_Id">@product.Product.item.product_description.title</a></td>
+                </tr>
+                }
+            </table>
+        </div>
+    </div>
+ 
 
 </div>

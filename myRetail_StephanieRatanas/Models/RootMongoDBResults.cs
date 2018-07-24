@@ -26,8 +26,8 @@ namespace myRetail_StephanieRatanas.Models
         public MongoItem item { get; set; }
 
 
-        [BsonId]
-        public ObjectId _id { get; set; }
+        //[BsonId]
+        //public ObjectId _id { get; set; }
 
     }
 
@@ -51,7 +51,3 @@ namespace myRetail_StephanieRatanas.Models
     }
 
 }
-
-
-
-

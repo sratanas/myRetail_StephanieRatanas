@@ -17,7 +17,9 @@ namespace myRetail_StephanieRatanas.Models
         public product Product { get; set; }
 
 
-        public object MergedJson { get; set; }
+        public object Json { get; set; }
+
+        public List<RootMongoDBResults> DBList { get; set; }
 
 
     }

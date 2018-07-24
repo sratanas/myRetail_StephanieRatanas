@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-md-6">
+                <br />
+                <br />
+                <h3>Json Response:</h3>
+                <pre>
+                </pre>
+            </div>
+            <div class=col-md-6>
+                <div>
+                    <br />
+                    <br />
+                    <h3>Products:</h3>
+                    <table class="table-condensed">
+                        @foreach (var product in Model.DBList)
+                        {
+                        <tr>
+                            <td><a href="/products/@product.Product.item.product_Id">@product.Product.item.product_description.title</a></td>
+                        </tr>
+                        }
+                    </table>
+                </div>
+            </div>
+    </body>
+</html>

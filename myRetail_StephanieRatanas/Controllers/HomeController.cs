@@ -22,6 +22,14 @@ namespace myRetail_StephanieRatanas.Controllers
             _redSkyRepository = redSkyRepository;
         }
 
+        [Route("/")]
+        public async Task<IActionResult> Hello()
+        {
+            
+            var model = new RootRedSkyResults();
+            model.DBList = await _redSkyRepository.GetAllProductsFromDatabase();
+            return View(model);
+        }
 
         [HttpGet]
         [Route("/products/{id}")]
@@ -31,6 +39,7 @@ namespace myRetail_StephanieRatanas.Controllers
 
             var ApiResults = await _redSkyService.ReturnAllApiData();
             var MongoResultById = await _redSkyRepository.GetProductById(id);
+            model.DBList = await _redSkyRepository.GetAllProductsFromDatabase();
 
 
             JObject Mongo = JObject.Parse(JsonConvert.SerializeObject(MongoResultById.Product));
@@ -44,13 +53,13 @@ namespace myRetail_StephanieRatanas.Controllers
                     MergeArrayHandling = MergeArrayHandling.Union
                 });
 
-                model.MergedJson = Mongo;
+                model.Json = Mongo;
 
                 return View(model);
             }
             else
             {
-                model.MergedJson = Mongo;
+                model.Json = Mongo;
                 return View(model);
             }
 
@@ -58,6 +67,7 @@ namespace myRetail_StephanieRatanas.Controllers
         }
 
         [HttpPut]
+        [Route("/products/{id}")]
         public IActionResult ChangeItemPrice()
         {
 

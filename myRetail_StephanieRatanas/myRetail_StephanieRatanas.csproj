@@ -19,8 +19,10 @@
     <Content Remove="wwwroot\images\banner1.svg" />
     <Content Remove="wwwroot\images\banner2.svg" />
     <Content Remove="wwwroot\images\banner3.svg" />
+    <Content Remove="Views\Shared\Error.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Services\IMongoDBService.cs" />
+    <Compile Remove="Models\FinalObjectModel.cs" />
   </ItemGroup>
 </Project>

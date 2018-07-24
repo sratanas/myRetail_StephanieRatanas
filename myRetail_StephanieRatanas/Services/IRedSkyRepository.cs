@@ -6,7 +6,7 @@ namespace myRetail_StephanieRatanas.Services
 {
     public  interface IRedSkyRepository
     {
-        //Task<IEnumerable<RootRedSkyResults>> GetAllProducts();
         Task<RootMongoDBResults> GetProductById(string id);
+        Task<List<RootMongoDBResults>> GetAllProductsFromDatabase();
     }
 }
