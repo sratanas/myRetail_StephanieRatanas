@@ -24,6 +24,8 @@ use RedSky
 db.createCollection("RedSky")
 db.RedSky.insertOne({product:{item:{tcin:"13860428",product_description:{title:"The Big Lebowski (Blu-ray)", price: 15.50}}}})
 db.RedSky.insertOne({product:{item:{tcin:"836541838",product_description:{title:"The Little Mermaid", price: 18.50}}}})
+db.RedSky.insertOne({product:{item:{tcin:"9384615355",product_description:{title:"Jurassic Park", price: 120.00}}}})
+
 ```
 
  - Navigate to folder with csproj file and run:
