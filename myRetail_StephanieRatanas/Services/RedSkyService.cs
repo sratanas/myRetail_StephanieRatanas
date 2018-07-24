@@ -9,6 +9,8 @@ namespace myRetail_StephanieRatanas.Services
 {
     public class RedSkyService : IRedSkyService
     {
+
+
         private static readonly HttpClient client = new HttpClient();
 
         public async Task<RootRedSkyResults> ReturnAllApiData()
@@ -31,6 +33,8 @@ namespace myRetail_StephanieRatanas.Services
             return obj;
 
         }
+
+
 
     }
 }

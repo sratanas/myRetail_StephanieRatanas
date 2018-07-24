@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using myRetail_StephanieRatanas.Services;
+using myRetail_StephanieRatanas.Models;
 
 namespace myRetail_StephanieRatanas
 {
@@ -32,7 +33,12 @@ namespace myRetail_StephanieRatanas
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
             services.AddSingleton<IRedSkyService, RedSkyService>();
-
+            services.AddSingleton<IRedSkyRepository, RedSkyRepository>();
+            services.Configure<Settings>(options =>
+            {
+                options.ConnectionString = Configuration.GetSection("MongoConnection:ConnectionString").Value;
+                options.Database = Configuration.GetSection("MongoConnection:Database").Value;
+            });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
