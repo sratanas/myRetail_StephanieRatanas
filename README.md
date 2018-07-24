@@ -14,7 +14,6 @@ myRetail is a RESTful service that retrieves information from an API and a NoSQL
 ### Prerequisites to run locally:
 
  - .NET Core SDK 2.1 or higher: https://www.microsoft.com/net/download
- - A version of Visual Studio or Visual Studio Code
  - MongoDB
  
 ## To run the application:
