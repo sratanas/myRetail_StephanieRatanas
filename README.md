@@ -17,7 +17,7 @@ myRetail is a RESTful service that retrieves information from an API and a NoSQL
  - MongoDB
  
 ## To run the application:
-
+ - Start Mongo ```mongod```
  - Create Database:
 ```
 use RedSky
@@ -35,3 +35,5 @@ dotnet restore
 dotnet build
 dotnet run
 ```
+## Notes
+Json relating to The Big Lebowski is pulled from both the API and the database. Data from other products is pulled only from database.
