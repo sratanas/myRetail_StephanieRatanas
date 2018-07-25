@@ -21,9 +21,13 @@
     <Content Remove="wwwroot\images\banner3.svg" />
     <Content Remove="Views\Shared\Error.cshtml" />
     <Content Remove="wwwroot\favicon.ico" />
+    <Content Remove="appsettings.json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Services\IMongoDBService.cs" />
     <Compile Remove="Models\FinalObjectModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="appsettings.json" />
   </ItemGroup>
 </Project>
