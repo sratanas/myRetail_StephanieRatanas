@@ -26,4 +26,7 @@
     <Compile Remove="Services\IMongoDBService.cs" />
     <Compile Remove="Models\FinalObjectModel.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\favicon.ico" />
+  </ItemGroup>
 </Project>
